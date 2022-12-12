@@ -21,3 +21,24 @@ Ex: Java object <-> Hibernate <-> Database
 - The Session object is lightweight and short lived object
 - not thread safe
 - that's why we can create multiple session and close it when our task is done
+
+## Example code for hibernate
+```
+SessionFactory factory = new Configuration()
+								    .configure("hibernate.cfg.xml")
+										.addAnnotatedClass(Users.class)
+										.buildSessionFactory();
+		
+Session session = factory.getCurrentSession();
+
+try {
+//  create object of entity class
+//  start transaction
+//	perform operation
+//	commit the transaction
+				
+} finally {
+  session.close();
+  factory.close();
+}
+```
