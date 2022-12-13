@@ -42,3 +42,10 @@ try {
   factory.close();
 }
 ```
+
+## HQL
+
+- selecting all records 
+```
+session.createQuery("from <Entity_name>").getResultList();
+```

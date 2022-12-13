@@ -30,11 +30,12 @@ public class App {
 //		start transaction
 		session.beginTransaction();
 		
-		List<Users> users = session.createQuery("from users").getResultList();
+		List<Users> users = session.createQuery("from users where userId >= 2").getResultList();
 		
 		for(Users user: users) {
 			System.out.println(user);
 		}
+		
 	}
 	
 }
