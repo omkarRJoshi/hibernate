@@ -49,3 +49,15 @@ try {
 ```
 session.createQuery("from <Entity_name>").getResultList();
 ```
+- select using where clause
+```
+session.createQuery("from users where userId >= 2").getResultList();
+```
+- update
+```
+		session.createQuery("update users set password = 'password' where first_name = 'xyz'").executeUpdate();
+```
+- delete
+```
+session.createQuery("delete from users where id = 2").executeUpdate();
+```
